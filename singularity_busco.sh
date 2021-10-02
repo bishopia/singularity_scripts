@@ -5,6 +5,11 @@
 #SBATCH -n 12
 ##SBATCH --account=epscor-condo
 
+#goal of script: 
+#this script will take a busco.sif image and a draft genome/set of contigs, and run busco via singularity exec in a writable sandbox. then the output folder will be copied back from the sandbox to the working directory and the sandbox is deleted.
+#the goal here is to have a ready to go script for reproducibly running busco wherever you are.
+
+#specify genome
 GENOME=trot_asm2.2.fa
 
 #build singularity sandbox from busco.sif image
